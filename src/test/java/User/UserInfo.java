@@ -1,3 +1,5 @@
+package User;
+
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 

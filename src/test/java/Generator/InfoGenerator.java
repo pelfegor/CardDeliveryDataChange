@@ -1,3 +1,6 @@
+package Generator;
+
+import User.UserInfo;
 import com.github.javafaker.Faker;
 
 import java.time.LocalDate;
@@ -8,6 +11,17 @@ public class InfoGenerator {
 
     public static UserInfo generateUser(int days) {
         return new UserInfo(generateCity(), generateDate(days), generateName(), generatePhoneNumber());
+    }
+
+    public static UserInfo generateUserWithInvalidName(int days) {
+        return new UserInfo(generateCity(), generateDate(days), generateInvalidName(), generatePhoneNumber());
+    }
+
+    public static UserInfo generateUserWithInvalidCity(int days) {
+        return new UserInfo(generateInvalidCity(), generateDate(days), generateName(), generatePhoneNumber());
+    }
+    public static UserInfo generateUserWithInvalidPhone(int days) {
+        return new UserInfo(generateCity(), generateDate(days), generateInvalidName(), generateInvalidPhoneNumber());
     }
 
     public static String generateName() {
@@ -30,6 +44,21 @@ public class InfoGenerator {
 
         Faker faker = new Faker(new Locale("ru"));
         return cities[faker.number().numberBetween(0, cities.length - 1)];
+    }
+
+    public static String generateInvalidCity() {
+        Faker faker = new Faker(new Locale("en"));
+        return faker.address().cityName();
+    }
+
+    public static String generateInvalidName() {
+        Faker faker = new Faker(new Locale("en"));
+        return faker.name().lastName() + " " + faker.name().firstName();
+    }
+
+    public static String generateInvalidPhoneNumber() {
+        Faker faker = new Faker(new Locale("ru"));
+        return (faker.phoneNumber().phoneNumber() + "0");
     }
 
 }
