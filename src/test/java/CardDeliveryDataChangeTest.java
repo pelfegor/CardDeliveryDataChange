@@ -24,7 +24,6 @@ public class CardDeliveryDataChangeTest {
     public void shouldReplanningDateTheDayAhead() { // Перепланировка даты доставки на день вперед
 
         UserInfo user = InfoGenerator.generateUser(5);
-        //open("http://localhost:9999/");
         $("[data-test-id='city'] input").setValue(user.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(user.getDate());
@@ -54,7 +53,6 @@ public class CardDeliveryDataChangeTest {
     public void shouldReplanningDateTheDayAgo() { // Перепланировка на один день назад
 
         UserInfo user = InfoGenerator.generateUser(5);
-        //open("http://localhost:9999/");
         $("[data-test-id='city'] input").setValue(user.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(user.getDate());
@@ -84,7 +82,6 @@ public class CardDeliveryDataChangeTest {
     public void shouldReplanningDateForTheSameDay() { // Перепланировка на тот же день
 
         UserInfo user = InfoGenerator.generateUser(5);
-        //open("http://localhost:9999/");
         $("[data-test-id='city'] input").setValue(user.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(user.getDate());
@@ -112,7 +109,6 @@ public class CardDeliveryDataChangeTest {
     public void shouldWarningIfReplanningToInvalidDate() { // Ошибка при перепланировании на невалидную дату
 
         UserInfo user = InfoGenerator.generateUser(5);
-        //open("http://localhost:9999/");
         $("[data-test-id='city'] input").setValue(user.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(user.getDate());

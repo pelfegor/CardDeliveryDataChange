@@ -21,7 +21,7 @@ public class InfoGenerator {
         return new UserInfo(generateInvalidCity(), generateDate(days), generateName(), generatePhoneNumber());
     }
     public static UserInfo generateUserWithInvalidPhone(int days) {
-        return new UserInfo(generateCity(), generateDate(days), generateInvalidName(), generateInvalidPhoneNumber());
+        return new UserInfo(generateCity(), generateDate(days), generateName(), generateInvalidPhoneNumber());
     }
 
     public static String generateName() {
@@ -57,8 +57,8 @@ public class InfoGenerator {
     }
 
     public static String generateInvalidPhoneNumber() {
-        Faker faker = new Faker(new Locale("ru"));
-        return (faker.phoneNumber().phoneNumber() + "0");
+        Faker faker = new Faker(new Locale("arm"));
+        return faker.phoneNumber().phoneNumber();
     }
 
 }
